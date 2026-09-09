@@ -1,6 +1,4 @@
 
-
-// window draggable, resizable, visibility , theme
 const windows = {
     1: document.getElementById('draggable-window1'),
     2: document.getElementById('draggable-window2'),
@@ -28,22 +26,19 @@ let isHorizontalResizing = false;
 let currentlyDragging = null;
 let highestZIndex = 1000; 
 
-// open window
 const openWindow = (key) => {
     const windowToShow = windows[key];
     windowToShow.classList.remove('hidden');
     windowToShow.classList.add('show');
-    windowToShow.style.left = `${30 + (key - 1) * 60}px`; // horizontal
-    windowToShow.style.top = `${30 + (key - 1) * 60}px`;  // vertical
+    windowToShow.style.left = `${30 + (key - 1) * 60}px`;
+    windowToShow.style.top = `${30 + (key - 1) * 60}px`;
     windowToShow.style.zIndex = 1000 + key;
 };
 
-//open button
 Object.keys(buttons).forEach(key => {
     buttons[key].addEventListener('click', () => openWindow(key));
 });
 
-//close button
 document.querySelectorAll('.close-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         const targetId = btn.getAttribute('data-target');
@@ -55,14 +50,12 @@ document.querySelectorAll('.close-btn').forEach(btn => {
     });
 });
 
-// darkmode toggle
 themeToggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
     themeToggleBtn.textContent = isDarkMode ? '☀️' : '🌙';
 });
 
-//windows draggable, resizable
 document.querySelectorAll('.draggable').forEach(dragItem => {
     dragItem.addEventListener('mousedown', (e) => {
         if (e.target.classList.contains('resizer')) {
@@ -86,7 +79,6 @@ document.querySelectorAll('.draggable').forEach(dragItem => {
             dragItem.offsetLeft - initialMousePos[0],
             dragItem.offsetTop - initialMousePos[1]
         ];
-        //dragged window to front
         currentlyDragging.style.zIndex = ++highestZIndex;
     });
 
