@@ -65,7 +65,6 @@ body.dark-mode .subtext {
     background: #4a4e52;
 }
 
-/* window styles */
 .draggable {
     position: absolute;
     width: 300px;
@@ -79,7 +78,6 @@ body.dark-mode .subtext {
     opacity: 0;
     transform: scale(0.8);
     transition: transform 0.3s ease, opacity 0.3s ease;
-    
 }
 
 .draggable.show {
@@ -113,12 +111,8 @@ body.dark-mode .draggable .header {
 }
 
 .draggable .content {
-   
-    
     padding: 1rem;
     overflow: auto;
-    /* height: calc(100% - 100px); */
-   
 }
 
 .close-btn {
@@ -147,8 +141,6 @@ body.dark-mode .draggable .header {
     display: none;
 }
 
-
-/* theme toggle */
 .theme-toggle-btn {
     position: fixed;
     top: 10px;
@@ -174,7 +166,6 @@ body.dark-mode .draggable .header {
     transform: scale(1.2);
 }
 
-/* footer */
 .footer , .boton{
     position: absolute;
     bottom: 0;
@@ -193,7 +184,6 @@ body.dark-mode .footer {
     background-color:transparent; 
     
 }
-
 body:not(.dark-mode) .footer {
     color: #333;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
@@ -230,7 +220,6 @@ body:not(.dark-mode) .footer {
     
 }
 
-/* media querizz */
 @media (max-width: 600px) {
     h1 {
         font-size: 1.5rem;
